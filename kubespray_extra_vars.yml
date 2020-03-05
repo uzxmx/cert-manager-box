@@ -1,0 +1,16 @@
+docker_rh_repo_base_url: "https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/7/$basearch/stable"
+docker_rh_repo_gpgkey: "https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/centos/gpg"
+
+gcr_image_repo: "gcr.azk8s.cn"
+docker_image_repo: "dockerhub.azk8s.cn"
+quay_image_repo: "quay.azk8s.cn"
+
+kube_proxy_mode: "iptables"
+
+# By default kubespray may store file under `.vagrant/provisioners/ansible/inventory`,
+# that may cause file content to be identified as host, result in unreachable host error.
+# So here we set it to another directory.
+credentials_dir: "tmp"
+
+helm_enabled: true
+helm_version: "v3.1.1"

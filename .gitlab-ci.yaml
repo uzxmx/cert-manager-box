@@ -1,0 +1,7 @@
+test job:
+  script:
+    - echo $COMMON_NAME
+    - echo $TLS_CERT
+    - echo $TLS_KEY
+  only:
+    - triggers

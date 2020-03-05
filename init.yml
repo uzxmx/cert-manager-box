@@ -1,0 +1,13 @@
+- hosts: kube-master
+  become: yes
+  tasks:
+    - shell: cp -R /root/.kube /home/vagrant && chown -R vagrant:vagrant /home/vagrant/.kube
+
+- hosts: kube-master
+  tasks:
+    - name: Install brig
+      shell: |
+        if ! type brig &>/dev/null; then
+          curl -C- -L -o /tmp/brig https://github.com/brigadecore/brigade/releases/download/v1.3.0/brig-linux-amd64
+          chmod a+x /tmp/brig && mv /tmp/brig ~/bin
+        fi
